@@ -1,24 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { site_data, cart, discounted_sales } from "./site_data";
 
 const General = function () {
-  
   const [sellingproducts, setSellingproducts] = useState(site_data);
   const [mycart, setMycart] = useState(cart);
   const [discounted_product, setDiscounted_product] =
     useState(discounted_sales);
 
-  
-
-
   function favourite(id) {
     setSellingproducts((sellingproducts) => {
       return sellingproducts.map((product) => {
         if (product.id === id) {
-          if (product.liked == require("./images/favourite1.png")) {
+          if (product.liked === require("./images/favourite1.png")) {
             return { ...product, liked: require("./images/favourite2.png") };
-          } else if (product.liked == require("./images/favourite2.png")) {
-            return { ...product, liked: require("./images/favourite1.png" )};
+          } else if (product.liked === require("./images/favourite2.png")) {
+            return { ...product, liked: require("./images/favourite1.png") };
           }
         }
         return product;
@@ -30,10 +26,10 @@ const General = function () {
     setDiscounted_product((discounted_product) => {
       return discounted_product.map((product) => {
         if (product.id === id) {
-          if (product.liked == require("./images/favourite1.png")) {
-            return { ...product, liked:require( "./images/favourite2.png" )};
-          } else if (product.liked == require("./images/favourite2.png")) {
-            return { ...product, liked: require("./images/favourite1.png" )};
+          if (product.liked === require("./images/favourite1.png")) {
+            return { ...product, liked: require("./images/favourite2.png") };
+          } else if (product.liked === require("./images/favourite2.png")) {
+            return { ...product, liked: require("./images/favourite1.png") };
           }
         }
         return product;
@@ -45,7 +41,7 @@ const General = function () {
     setTimeout(() => {
       setSellingproducts((sellingproducts) => {
         return sellingproducts.map((product) => {
-          if (product.id == id) {
+          if (product.id === id) {
             return { ...product, quantity: product.quantity + 1 };
           }
           return product;
@@ -58,7 +54,7 @@ const General = function () {
     setTimeout(() => {
       setDiscounted_product((discounted_product) => {
         return discounted_product.map((product) => {
-          if (product.id == id) {
+          if (product.id === id) {
             return { ...product, quantity: product.quantity + 1 };
           }
           return product;
@@ -71,7 +67,7 @@ const General = function () {
     setSellingproducts((sellingproducts) => {
       return sellingproducts.map((product) => {
         console.log(product);
-        if (product.id == id) {
+        if (product.id === id) {
           return { ...product, quantity: 0 };
         }
         console.log(product);
@@ -84,7 +80,7 @@ const General = function () {
     setDiscounted_product((discounted_product) => {
       return discounted_product.map((product) => {
         console.log(product);
-        if (product.id == id) {
+        if (product.id === id) {
           return { ...product, quantity: 0 };
         }
         console.log(product);
@@ -97,7 +93,7 @@ const General = function () {
     setTimeout(() => {
       setSellingproducts(() => {
         return sellingproducts.map((product) => {
-          if (product.id == id) {
+          if (product.id === id) {
             if (product.quantity > 0) {
               return { ...product, quantity: product.quantity - 1 };
             } else if ((product.quantity = 0)) {
@@ -114,7 +110,7 @@ const General = function () {
     setTimeout(() => {
       setDiscounted_product(() => {
         return discounted_product.map((product) => {
-          if (product.id == id) {
+          if (product.id === id) {
             if (product.quantity > 0) {
               return { ...product, quantity: product.quantity - 1 };
             } else if ((product.quantity = 0)) {
@@ -159,10 +155,9 @@ const General = function () {
         });
       });
     }
-
   }
 
-  const General_display = () => {
+  const GENERAL_DISPLAY = () => {
     return sellingproducts.map((item) => {
       const { category, brand, img, price, quantity, id, liked } = item;
 
@@ -221,7 +216,7 @@ const General = function () {
     });
   };
 
-  const Discounted_products = () => {
+  const DISCOUNTED_PRODUCTS = () => {
     return discounted_product.map((item) => {
       const { category, brand, img, price, quantity, id, liked, discount } =
         item;
@@ -295,10 +290,9 @@ const General = function () {
     });
   };
 
-  const Cart_basket = () => {
+  const CART_BASKET = () => {
     return mycart.map((item) => {
-      const { category, brand, img, price, quantity, id, liked, discount } =
-        item;
+      const { category, brand, img, price, quantity, id, liked } = item;
 
       return (
         <div className="selling_item" key={id}>
@@ -355,20 +349,21 @@ const General = function () {
               alignItems: "center",
             }}
           >
-            See All <img src={require("./images/arrow_right.png")} alt="arrow_right" />
+            See All{" "}
+            <img src={require("./images/arrow_right.png")} alt="arrow_right" />
           </div>
         </div>
         <h1>Discounted products</h1>
         <div className="showglass">
-          <Discounted_products />
+          <DISCOUNTED_PRODUCTS />
         </div>
         <h1>Normal sales</h1>
         <div className="showglass">
-          <General_display />
+          <GENERAL_DISPLAY />
         </div>
         <h1>Cart</h1>
         <div className="showglass">
-          <Cart_basket />
+          <CART_BASKET />
         </div>
       </div>
     </React.Fragment>

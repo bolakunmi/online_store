@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 import general from "./General.js";
 
 const Cart = function () {
+  const CART_BASKET = () => {
+    console.log(general.mycart);
+    return <div>{general.mycart}</div>;
 
-  const Cart_basket = () => {
-    console.log(general.mycart)
-    return <div>{general.mycart}</div>
-    
     // return mycart.map((item) => {
     //   const { category, brand, img, price, quantity, id, liked, discount } =
     //     item;
@@ -34,12 +33,12 @@ const Cart = function () {
     // });
   };
 
-  console.log(general.mycart)
+  console.log(general.mycart);
   return (
     <div>
       <Link to={`/`}>
         <h1>here is my cart</h1>
-        <Cart_basket />
+        <CART_BASKET />
       </Link>
     </div>
   );
