@@ -7,6 +7,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import About from "./about.js";
 import Cart from "./cart.js";
 
+//works now... no error, the usecontext not yet implemented
 // put a loader!!!
 function App() {
   return (
