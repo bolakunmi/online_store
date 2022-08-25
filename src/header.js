@@ -67,10 +67,10 @@ const Header = () => {
                   />
                 </button>
                 <div className="dropdown-content">
-                  <a
-                    rel="noopener"
+                  <Link
                     target="_blank"
-                    href="#"
+                    rel="noreferrer"
+                    to="#"
                     style={{ background: "#00a4bd", cursor: "pointer" }}
                   >
                     <button className="signup_button">
@@ -78,17 +78,17 @@ const Header = () => {
                       Sign Up
                     </button>
                     {/* add shadow to the button etc */}
-                  </a>
+                  </Link>
                   <hr />
 
-                  <a rel="noopener" target="_blank" href="#">
+                  <Link target="_blank" rel="noreferrer" to="#">
                     Login
-                  </a>
+                  </Link>
 
-                  <a
-                    rel="noopener"
+                  <Link
                     target="_blank"
-                    href="#"
+                    rel="noreferrer"
+                    to="#"
                     style={{
                       display: "flex",
                       alignItems: "center",
@@ -101,7 +101,7 @@ const Header = () => {
                       style={{ width: "15px", height: "15px" }}
                     />
                     Favourites
-                  </a>
+                  </Link>
                 </div>
               </div>
             </li>
@@ -119,32 +119,32 @@ const Header = () => {
                   />
                 </button>
                 <div className="dropdown-content">
-                  <a rel="noopener" target="_blank" href="#">
+                  <Link target="_blank" rel="noreferrer" to="#">
                     Help Center
-                  </a>
+                  </Link>
 
-                  <a rel="noopener" target="_blank" href="#">
+                  <Link target="_blank" rel="noreferrer" to="#">
                     Place and Track order
-                  </a>
+                  </Link>
 
-                  <a rel="noopener" target="_blank" href="#">
+                  <Link target="_blank" rel="noreferrer" to="#">
                     Order Cancellation
-                  </a>
+                  </Link>
 
-                  <a rel="noopener" target="_blank" href="#">
+                  <Link target="_blank" rel="noreferrer" to="#">
                     Returns and Refunds
-                  </a>
+                  </Link>
 
-                  <a rel="noopener" target="_blank" href="#">
+                  <Link target="_blank" rel="noreferrer" to="#">
                     Payments and Accounts
-                  </a>
-                  <a rel="noopener" target="_blank" href="#">
+                  </Link>
+                  <Link target="_blank" rel="noreferrer" to="#">
                     <button>
                       <img src={require("./images/chat.png")} alt="Chat" />
                       Live Chat
                     </button>
                     {/* add shadow to the button etc */}
-                  </a>
+                  </Link>
                 </div>
               </div>
             </li>
@@ -204,8 +204,9 @@ const Header = () => {
               Help
             </li>
 
-            <a
-              href="https://bolakunmiprofile.netlify.app/"
+            <Link
+              rel="noreferrer"
+              to="https://bolakunmiprofile.netlify.app/"
               target="_blank"
               style={{ textDecoration: "none", color: "black" }}
             >
@@ -218,7 +219,7 @@ const Header = () => {
                 <img src={require("./images/profile.png")} alt="profile" />
                 About Developer
               </li>
-            </a>
+            </Link>
           </ul>
         </nav>
       )}

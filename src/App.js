@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "./header.js";
 import General from "./General.js";
 import "./index.css";
-import Main from "./about.js";
-import { Routes, Route, Link } from "react-router-dom";
-import About from "./about.js";
+import { Routes, Route } from "react-router-dom";
 import Cart from "./cart.js";
 
 //works now... no error, the usecontext not yet implemented
@@ -24,4 +22,3 @@ function App() {
   );
 }
 export default App;
-
